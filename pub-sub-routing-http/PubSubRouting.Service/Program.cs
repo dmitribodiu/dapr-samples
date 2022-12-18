@@ -1,4 +1,5 @@
 using PubSubRouting.Interfaces;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,7 +32,7 @@ app.MapPost("/inventory/products", (Product product) =>
     return Results.Ok();
 });
 
-app.MapPost("/failedMessages", (object message) =>
+app.MapPost("/failedMessages", (JsonDocument message) =>
 {
     Console.WriteLine("Subscriber received (dead letter) : " + message);
     return Results.Ok();
