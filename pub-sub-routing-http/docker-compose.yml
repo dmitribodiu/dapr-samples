@@ -52,6 +52,7 @@ services:
       "-app-protocol", "http", 
       "-components-path", "/components", 
       "-config", "/components/config.yaml", 
+      "-log-level", "debug"
       ]
     volumes:
       - "./components/:/components"
