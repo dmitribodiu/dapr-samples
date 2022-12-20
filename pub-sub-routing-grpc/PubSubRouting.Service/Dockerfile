@@ -9,6 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["PubSubRouting.Service/PubSubRouting.Service.csproj", "PubSubRouting.Service/"]
 COPY ["PubSubRouting.Interfaces/PubSubRouting.Interfaces.csproj", "PubSubRouting.Interfaces/"]
+COPY ["PubSubRouting.Framework/PubSubRouting.Framework.csproj", "PubSubRouting.Framework/"]
 RUN dotnet restore "PubSubRouting.Service/PubSubRouting.Service.csproj"
 COPY . .
 WORKDIR "/src/PubSubRouting.Service"

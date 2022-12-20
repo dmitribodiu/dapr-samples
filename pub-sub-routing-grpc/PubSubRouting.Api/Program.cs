@@ -1,9 +1,7 @@
 using Dapr;
 using Dapr.Client;
-using Microsoft.AspNetCore.Mvc;
 using PubSubRouting.Framework;
 using PubSubRouting.Interfaces;
-using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
