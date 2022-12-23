@@ -13,7 +13,7 @@ namespace Company.Framework
             {
                 var derivedTypes = typeInfo.Type.Assembly.GetTypes()
                     .Where(t => !t.IsAbstract && t.IsClass && typeInfo.Type.IsAssignableFrom(t))
-                    .Select(t => new JsonDerivedType(t, t.FullName))
+                    .Select(t => new JsonDerivedType(t, t.FullName!))
                     .ToList();
 
                 if (derivedTypes.Any())
@@ -33,7 +33,7 @@ namespace Company.Framework
                 {
                     DerivedTypes =
                     {
-                        new(type, type.FullName)
+                        new(type, type.FullName!)
                     }
                 };
             }
